@@ -1,8 +1,8 @@
 platform :ios, '9.0'
 require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
-target 'GoBarberMobile' do
-  # Pods for GoBarberMobile
+target 'MeetupReactNative' do
+  # Pods for MeetupReactNative
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -34,7 +34,8 @@ target 'GoBarberMobile' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'GoBarberMobileTests' do
+
+  target 'MeetupReactNativeTests' do
     inherit! :search_paths
     # Pods for testing
   end
@@ -42,10 +43,10 @@ target 'GoBarberMobile' do
   use_native_modules!
 end
 
-target 'GoBarberMobile-tvOS' do
-  # Pods for GoBarberMobile-tvOS
+target 'MeetupReactNative-tvOS' do
+  # Pods for MeetupReactNative-tvOS
 
-  target 'GoBarberMobile-tvOSTests' do
+  target 'MeetupReactNative-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

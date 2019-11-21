@@ -1,8 +1,22 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
+import { YellowBox, StatusBar } from 'react-native';
 
-// import { Container } from './styles';
+import './config/ReactotronConfig';
 
-export default function src() {
-  return <Text>GoBarber Mobile</Text>;
+import { store, persistor } from './store';
+import App from './App';
+
+YellowBox.ignoreWarnings(['CTRootView cancelTouches']);
+
+export default function Index() {
+  return (
+    <Provider store={store}>
+      <PersistGate persistor={persistor}>
+        <StatusBar barStyle="light-content" backgroundColor="#7159c1" />
+        <App />
+      </PersistGate>
+    </Provider>
+  );
 }

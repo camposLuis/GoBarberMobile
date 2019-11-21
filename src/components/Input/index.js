@@ -1,16 +1,26 @@
-import styled from 'styled-components/native';
-import { RectButton } from 'react-native-gesture-handler';
+import React, { forwardRef } from 'react';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import PropTypes from 'prop-types';
 
-export const Container = styled(RectButton)`
-  height: 50px;
-  background: #f94d6a;
-  border-radius: 4px;
-  align-items: center;
-  justify-content: center;
-`;
+import { Container, TInput } from './styles';
 
-export const Text = styled.Text`
-  color: #fff;
-  font-weight: bold;
-  font-size: 18px;
-`;
+function Input({ style, icon, ...rest }, ref) {
+  return (
+    <Container style={style}>
+      {icon && <Icon name={icon} size={20} color="rgba(255, 255, 255, 0.6)" />}
+      <TInput {...rest} ref={ref} />
+    </Container>
+  );
+}
+
+Input.propTypes = {
+  icon: PropTypes.string,
+  style: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
+};
+
+Input.defaultProps = {
+  icon: null,
+  style: {},
+};
+
+export default forwardRef(Input);
